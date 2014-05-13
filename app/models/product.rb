@@ -1,6 +1,8 @@
 class Product < ActiveRecord::Base
   has_many :line_items
+  belongs_to :category
   before_destroy :ensure_not_referenced_by_any_line_item
+  validates :category, :presence => true
   #...
   private
 # ensure that there are no line items referencing this product

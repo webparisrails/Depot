@@ -1,11 +1,11 @@
 ActiveAdmin.register Product do
 
-  permit_params :category, :name, :price, :availability, :description
+  permit_params :category_id, :title, :description, :image_url, :price, :available
   index do 
     selectable_column
     id_column
     column :categorie, :category
-    column :nom, :name
+    column :nom, :title
     column :description
     column :prix, :price do |product|
       number_to_currency product.price, :unit => "€"

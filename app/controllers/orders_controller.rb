@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:new, :create]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /orders
   # GET /orders.json
   def index
@@ -21,6 +21,9 @@ class OrdersController < ApplicationController
       return
     end
 
+    @name = current_user.name
+    @address = current_user.address
+    @mail = current_user.email
     @order = Order.new
   end
 

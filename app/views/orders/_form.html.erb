@@ -11,19 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, size: 40 %>
+  <div>
+    Un mail contenant une facture sera envoyé à l'addresse: <%= @mail %> 
   </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_area :address, rows: 3, cols: 40 %>
+  <div>
+    L'addresse de livraison est la suivante:
   </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email, size: 40 %>
-  </div>
-  <div class="field">
+  <ul>
+    <li><%= @name %><br></li>
+    <li><%= @address %></li>
+  </ul>
+  <div>
+    <a href="/users/edit">Modifier ces informations</a>
+ <div class="field">
     <%= f.label :pay_type %><br>
     <%= f.select :pay_type, Order::PAYMENT_TYPES,
                  prompt: 'Select a payment method' %>

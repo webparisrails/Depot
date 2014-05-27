@@ -11,8 +11,8 @@ class Cart < ActiveRecord::Base
     current_item
   end
 
-  def total_price
-    line_items.to_a.sum { |item| item.total_price }
+  def total_price_in_cents
+    line_items.to_a.sum { |item| item.total_price_in_cents }
   end
 
 end

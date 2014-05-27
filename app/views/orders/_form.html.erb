@@ -11,7 +11,17 @@
   </ul>
   <div>
     <a href="/users/edit">Modifier ces informations</a>
- <div class="actions">
+	<form action="" method="POST">
+	  <script
+	    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+	    data-key="pk_test_MGnfeMZG36VXNLzANrZENriR"
+	    data-amount= <%= @cart.total_price_in_cents * 100 %>
+	    data-name="Demo Site"
+	    data-description="2 widgets ($20.00)"
+	    data-image="/128x128.png">
+	  </script>
+	</form>
+  <!--<div class="actions">
     <%= f.submit 'Place Order' %>
-  </div>
+  </div>-->
 <% end %>

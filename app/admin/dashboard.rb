@@ -16,7 +16,7 @@ ActiveAdmin.register_page "Dashboard" do
         end
         column "Prix" do |a|
           #link_to a.price, admin_product_path(a)
-          number_to_currency a.price, :unit => "€"
+          number_to_currency a.price_in_cents, :unit => "€"
         end
       end
     end

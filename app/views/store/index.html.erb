@@ -1,19 +1,33 @@
-<% if notice %>
-    <p id="notice"><%= notice %></p>
-<% end %>
-<h1>My Catalog</h1>
-<% cache ['store', Product.latest] do %>
-    <% @products.each do |product| %>
-        <% cache ['entry', product] do %>
-            <div class="entry">
-              <%= image_tag(product.image_url) %>
-              <h3><%= product.title %></h3>
-              <%= sanitize(product.description) %>
-              <div class="price_line">
-                <span class="price_in_cents"><%= number_to_currency(product.price_in_cents) %></span>
-                <%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true %>
-              </div>
-            </div>
-        <% end %>
-    <% end %>
-<% end %>
+<div id="home" class="header">
+<!-- BIG HEADING WITH CALL TO ACTION BUTTONS AND SHORT MESSAGES -->
+<div class="container">
+
+  <!-- HEADING -->
+  <h1 class="intro">Active Verre - Les experts du 92</h1>
+
+  <!-- CALL TO ACTION BUTTONS -->
+  <div class="buttons">
+    <a href="#" class="btn btn-primary custom-button red-btn">Nos travaux précédents</a>
+    <a href="#" class="btn btn-primary custom-button green-btn">Demandez un devis</a>
+  </div>
+
+  <!-- 3 SHORT MESSAGE ABOUT COMPANY -->
+  <div class="row bottom-message-section">
+    <div class="col-lg-4 col-sm-4">
+      <div class="short-text">
+        <i class="icon icon-fontawesome-webfont-358"></i> Installation
+      </div>
+    </div>
+    <div class="col-lg-4 col-sm-4">
+      <div class="short-text">
+        <i class="icon-fontawesome-webfont-286"></i> Dépannage
+      </div>
+    </div>
+    <div class="col-lg-4 col-sm-4">
+      <div class="short-text">
+        <i class="icon-fontawesome-webfont-347"></i> Rénovation
+      </div>
+    </div>
+  </div>
+</div> <!-- / END BIG HEADING WITH CALL TO ACTION BUTTONS AND SHORT MESSAGES  -->
+</div>

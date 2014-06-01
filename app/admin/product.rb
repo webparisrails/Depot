@@ -1,14 +1,14 @@
 ActiveAdmin.register Product do
 
-  permit_params :category_id, :title, :description, :image_url, :price, :available
+  permit_params :category_id, :title, :description, :image_url, :price_in_cents, :available
   index do 
     selectable_column
     id_column
     column :categorie, :category
     column :nom, :title
     column :description
-    column :prix, :price do |product|
-      number_to_currency product.price, :unit => "€"
+    column :prix, :price_in_cents do |product|
+      number_to_currency product.price_in_cents, :unit => "€"
     end
     column :disponible, :available do |a|
       status_tag(a.available? ? "OUI" : "NON", (a.available? :ok ))

@@ -29,18 +29,17 @@
       </div>
       <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
         <ul class="nav navbar-nav navbar-right responsive-nav main-nav-list">
-          <li><a href="#home">Accueil</a></li>
+          <li><a href="#home"><%= link_to 'Accueil', static_pages_home_path %></a></li>
           <li><a href="#">Miroiterie</a></li>
           <li><a href="#">Serrurerie</a></li>
           <li><a href="#">Metallerie</a></li>
           <li><a href="#">Produits Verriers</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#contact"><%= link_to 'Contact', contact_path %></a></li>
         </ul>
       </nav>
     </div>
   </div>
   <!-- / END TOP BAR -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 </header> <!-- / END HOME SECTION  -->
 
 <%= yield %>

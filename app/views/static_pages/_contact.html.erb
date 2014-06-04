@@ -20,24 +20,24 @@
 
     <!-- CONTACT FORM-->
     <div class="row">
-      <%= simple_form_for @contact do |f| %>
-          <div class="wow fadeInLeft animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
-            <div class="col-lg-4 col-sm-4">
-              <%= f.input :nom, input_html: { class: 'form-control input-box' } %>
-            </div>
-            <div class="col-lg-4 col-sm-4">
-              <%= f.input :email, input_html: { class: 'form-control input-box' } %>
-            </div>
-            <div class="col-lg-4 col-sm-4">
-              <%= f.input :sujet, input_html: { class: 'form-control input-box' } %>
-            </div>
+      <form role="form" action="#" class="contact-form">
+        <div class="wow fadeInLeft animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+          <div class="col-lg-4 col-sm-4">
+            <input type="text" name="name" placeholder="Your Name" class="form-control input-box">
           </div>
+          <div class="col-lg-4 col-sm-4">
+            <input type="email" name="email" placeholder="Your Email" class="form-control input-box">
+          </div>
+          <div class="col-lg-4 col-sm-4">
+            <input type="text" name="subject" placeholder="Subject" class="form-control input-box">
+          </div>
+        </div>
 
-          <div class="col-md-12 wow fadeInRight animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
-            <%= f.input :message, :as => :text, input_html: { class: 'form-control textarea-box' } %>
-          </div>
-          <%= f.button :submit, 'ENVOYEZ', input_html: { class: 'btn btn-primary custom-button red-btn wow fadeInLeft animated'} %>
-      <% end %>
+        <div class="col-md-12 wow fadeInRight animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+          <textarea name="message" class="form-control textarea-box" placeholder="Your Message"></textarea>
+        </div>
+        <button class="btn btn-primary custom-button red-btn wow fadeInLeft animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s" type="submit">ENVOYEZ</button>
+      </form>
     </div>
     <!-- / END CONTACT FORM-->
   </div> <!-- / END CONTAINER -->

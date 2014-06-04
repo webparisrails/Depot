@@ -3,12 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
-# Use pg as the database for Active Record
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -40,6 +34,13 @@ gem 'spring',        group: :development
 gem 'activeadmin', github: 'gregbell/active_admin'
 # Use unicorn as the app server
 # gem 'unicorn'
+
+# Use pg as the database for Active Record
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

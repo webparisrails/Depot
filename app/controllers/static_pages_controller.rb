@@ -1,6 +1,8 @@
 class StaticPagesController < ApplicationController
   def home
     @contact = Contact.new(params[:contact])
-    OrderNotifier.contact(@contact).deliver
+    if @contact.save
+      OrderNotifier.contact(@contact).deliver
+    end
   end
 end

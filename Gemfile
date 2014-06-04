@@ -19,6 +19,10 @@ gem 'bootstrap-sass'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+
+# Use pg as the database for Active Record
+gem 'pg'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -35,12 +39,6 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 # Use unicorn as the app server
 # gem 'unicorn'
 
-# Use pg as the database for Active Record
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
-
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -48,5 +46,6 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'rails_12factor', group: :production
 
 ruby "2.1.1"

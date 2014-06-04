@@ -10,4 +10,3 @@ development:
   pool: 5 
   port: 5432 
   username: rapha
-

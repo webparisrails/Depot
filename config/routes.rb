@@ -1,20 +1,17 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
-  get 'static_pages/contact', as: 'contact'
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users
   resources :orders
-
   resources :line_items
-
   resources :carts
-
-  get 'store/index'
   resources :products
 
-  root 'static_pages#home', as: 'home'
+  root 'static_pages#home'
+  get 'static_pages/home'
+  get 'static_pages/contact', as: 'contact'
+  get 'store/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

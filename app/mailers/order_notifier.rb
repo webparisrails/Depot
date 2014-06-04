@@ -1,6 +1,12 @@
 class OrderNotifier < ActionMailer::Base
   default from: 'Web Paris Rails <webparisrails@gmail.com>'
 
+  def contact(contact)
+    @greeting = "Bonjour"
+    @contact = contact
+    mail(to: @contact.email, subject: @contact.sujet)
+  end
+
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #

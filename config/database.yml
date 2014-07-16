@@ -6,8 +6,8 @@ default: &default
 development:
   adapter: postgresql
   encoding: unicode 
-  database: depot_psql 
+  database: ltatest
   pool: 5 
-  port: 5432 
-  username: rapha
+  port: 5433
+  username: maxore
 
